@@ -1,0 +1,799 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{ED1D8096-53A5-467A-9C10-6C8AA32870C5}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>FinalProject</RootNamespace>
+    <AssemblyName>FinalProject</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DotNetBrowser, Version=2.22.1.3541, Culture=neutral, PublicKeyToken=b0b5aaca9c95c84e, processorArchitecture=MSIL">
+      <HintPath>packages\DotNetBrowser.2.22.1\lib\net45\DotNetBrowser.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetBrowser.Chromium.Win-arm64, Version=2.22.1.3541, Culture=neutral, PublicKeyToken=b0b5aaca9c95c84e, processorArchitecture=MSIL">
+      <HintPath>packages\DotNetBrowser.Chromium.Win-arm64.Net45.2.22.1\lib\net45\DotNetBrowser.Chromium.Win-arm64.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetBrowser.Chromium.Win-x64, Version=2.22.1.3541, Culture=neutral, PublicKeyToken=b0b5aaca9c95c84e, processorArchitecture=MSIL">
+      <HintPath>packages\DotNetBrowser.Chromium.Win-x64.Net45.2.22.1\lib\net45\DotNetBrowser.Chromium.Win-x64.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetBrowser.Chromium.Win-x86, Version=2.22.1.3541, Culture=neutral, PublicKeyToken=b0b5aaca9c95c84e, processorArchitecture=MSIL">
+      <HintPath>packages\DotNetBrowser.Chromium.Win-x86.Net45.2.22.1\lib\net45\DotNetBrowser.Chromium.Win-x86.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetBrowser.Core, Version=2.22.1.3541, Culture=neutral, PublicKeyToken=b0b5aaca9c95c84e, processorArchitecture=MSIL">
+      <HintPath>packages\DotNetBrowser.2.22.1\lib\net45\DotNetBrowser.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetBrowser.Logging, Version=2.22.1.3541, Culture=neutral, PublicKeyToken=b0b5aaca9c95c84e, processorArchitecture=MSIL">
+      <HintPath>packages\DotNetBrowser.2.22.1\lib\net45\DotNetBrowser.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetBrowser.WinForms, Version=2.22.1.3541, Culture=neutral, PublicKeyToken=b0b5aaca9c95c84e, processorArchitecture=MSIL">
+      <HintPath>packages\DotNetBrowser.WinForms.2.22.1\lib\net45\DotNetBrowser.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Apis, Version=1.60.0.0, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
+      <HintPath>packages\Google.Apis.1.60.0\lib\net45\Google.Apis.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Apis.Core, Version=1.60.0.0, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
+      <HintPath>packages\Google.Apis.Core.1.60.0\lib\net45\Google.Apis.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Apis.PlatformServices, Version=1.60.0.0, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
+      <HintPath>packages\Google.Apis.1.60.0\lib\net45\Google.Apis.PlatformServices.dll</HintPath>
+    </Reference>
+    <Reference Include="Krypton.Toolkit, Version=70.22.11.312, Culture=neutral, PublicKeyToken=a87e673e9ecb6e8e, processorArchitecture=MSIL">
+      <HintPath>packages\Krypton.Toolkit.70.22.11.312\lib\net48\Krypton.Toolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.Office.Interop.Excel.15.0.4795.1001\lib\net20\Microsoft.Office.Interop.Excel.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>packages\Newtonsoft.Json.13.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="protobuf-net, Version=2.4.0.0, Culture=neutral, PublicKeyToken=257b51d87d2e4d67, processorArchitecture=MSIL">
+      <HintPath>packages\protobuf-net.2.4.0\lib\net40\protobuf-net.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="zxing, Version=0.16.9.0, Culture=neutral, PublicKeyToken=4e88037ac681fe60, processorArchitecture=MSIL">
+      <HintPath>packages\ZXing.Net.0.16.9\lib\net48\zxing.dll</HintPath>
+    </Reference>
+    <Reference Include="zxing.presentation, Version=0.16.9.0, Culture=neutral, PublicKeyToken=4e88037ac681fe60, processorArchitecture=MSIL">
+      <HintPath>packages\ZXing.Net.0.16.9\lib\net48\zxing.presentation.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App\Admin\KhuyenMai\AddKM.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="App\Admin\KhuyenMai\AddKM.Designer.cs">
+      <DependentUpon>AddKM.cs</DependentUpon>
+    </Compile>
+    <Compile Include="App\Admin\KhuyenMai\CardKMAdmin.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="App\Admin\KhuyenMai\CardKMAdmin.Designer.cs">
+      <DependentUpon>CardKMAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="App\Admin\MainAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="App\Admin\MainAdmin.Designer.cs">
+      <DependentUpon>MainAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="App\Admin\KhuyenMai\UCKMAdmin.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="App\Admin\KhuyenMai\UCKMAdmin.Designer.cs">
+      <DependentUpon>UCKMAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="App\Admin\TaiKhoan\EditTK.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="App\Admin\TaiKhoan\EditTK.Designer.cs">
+      <DependentUpon>EditTK.cs</DependentUpon>
+    </Compile>
+    <Compile Include="App\Admin\ThongBao\CardTBAdmin.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="App\Admin\ThongBao\CardTBAdmin.Designer.cs">
+      <DependentUpon>CardTBAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="App\Admin\ThongBao\TBDetailAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="App\Admin\ThongBao\TBDetailAdmin.Designer.cs">
+      <DependentUpon>TBDetailAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="App\Admin\ThongBao\UCTBAdmin.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="App\Admin\ThongBao\UCTBAdmin.Designer.cs">
+      <DependentUpon>UCTBAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="App\Admin\DoanhThu\UCDTAdmin.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="App\Admin\DoanhThu\UCDTAdmin.Designer.cs">
+      <DependentUpon>UCDTAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="App\Admin\TaiKhoan\UCTK.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="App\Admin\TaiKhoan\UCTK.Designer.cs">
+      <DependentUpon>UCTK.cs</DependentUpon>
+    </Compile>
+    <Compile Include="App\Login\Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="App\Login\Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="App\Login\UCDK.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="App\Login\UCDK.Designer.cs">
+      <DependentUpon>UCDK.cs</DependentUpon>
+    </Compile>
+    <Compile Include="App\Main\CaiDat\CardDH.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="App\Main\CaiDat\CardDH.Designer.cs">
+      <DependentUpon>CardDH.cs</DependentUpon>
+    </Compile>
+    <Compile Include="App\Main\CaiDat\CardOrderDetails.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="App\Main\CaiDat\CardOrderDetails.Designer.cs">
+      <DependentUpon>CardOrderDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="App\Main\CaiDat\OrderDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="App\Main\CaiDat\OrderDetails.Designer.cs">
+      <DependentUpon>OrderDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="App\Main\CaiDat\UCCD.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="App\Main\CaiDat\UCCD.Designer.cs">
+      <DependentUpon>UCCD.cs</DependentUpon>
+    </Compile>
+    <Compile Include="App\Main\CuaHang\CardCH.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="App\Main\CuaHang\CardCH.Designer.cs">
+      <DependentUpon>CardCH.cs</DependentUpon>
+    </Compile>
+    <Compile Include="App\Main\GioHang\ADKM.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="App\Main\GioHang\ADKM.Designer.cs">
+      <DependentUpon>ADKM.cs</DependentUpon>
+    </Compile>
+    <Compile Include="App\Main\GioHang\CardGH.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="App\Main\GioHang\CardGH.Designer.cs">
+      <DependentUpon>CardGH.cs</DependentUpon>
+    </Compile>
+    <Compile Include="App\Main\GioHang\QRcode.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="App\Main\GioHang\QRcode.Designer.cs">
+      <DependentUpon>QRcode.cs</DependentUpon>
+    </Compile>
+    <Compile Include="App\Main\GioHang\UCGH.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="App\Main\GioHang\UCGH.Designer.cs">
+      <DependentUpon>UCGH.cs</DependentUpon>
+    </Compile>
+    <Compile Include="App\Main\KhuyenMai\CardKM.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="App\Main\KhuyenMai\CardKM.Designer.cs">
+      <DependentUpon>CardKM.cs</DependentUpon>
+    </Compile>
+    <Compile Include="App\Main\KhuyenMai\CardKMForDisplay.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="App\Main\KhuyenMai\CardKMForDisplay.Designer.cs">
+      <DependentUpon>CardKMForDisplay.cs</DependentUpon>
+    </Compile>
+    <Compile Include="App\Main\ThongBao\CardTB.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="App\Main\ThongBao\CardTB.Designer.cs">
+      <DependentUpon>CardTB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="App\Main\ThongBao\TBDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="App\Main\ThongBao\TBDetail.Designer.cs">
+      <DependentUpon>TBDetail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="App\Main\ThucDon\CardTD.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="App\Main\ThucDon\CardTD.Designer.cs">
+      <DependentUpon>CardTD.cs</DependentUpon>
+    </Compile>
+    <Compile Include="App\Main\CuaHang\UCCH.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="App\Main\CuaHang\UCCH.Designer.cs">
+      <DependentUpon>UCCH.cs</DependentUpon>
+    </Compile>
+    <Compile Include="App\Login\UCDN.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="App\Login\UCDN.Designer.cs">
+      <DependentUpon>UCDN.cs</DependentUpon>
+    </Compile>
+    <Compile Include="App\Main\KhuyenMai\UCKM.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="App\Main\KhuyenMai\UCKM.Designer.cs">
+      <DependentUpon>UCKM.cs</DependentUpon>
+    </Compile>
+    <Compile Include="App\Main\UCMain.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="App\Main\UCMain.Designer.cs">
+      <DependentUpon>UCMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="App\Main\ThucDon\UCTD.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="App\Main\ThucDon\UCTD.Designer.cs">
+      <DependentUpon>UCTD.cs</DependentUpon>
+    </Compile>
+    <Compile Include="App\Main\MainUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="App\Main\MainUser.Designer.cs">
+      <DependentUpon>MainUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="App\Main\ThongBao\UCTB.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="App\Main\ThongBao\UCTB.Designer.cs">
+      <DependentUpon>UCTB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="App\Manager\DoanhThu\UCDTManager.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="App\Manager\DoanhThu\UCDTManager.Designer.cs">
+      <DependentUpon>UCDTManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="App\Manager\NguyenLieu\UCNL.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="App\Manager\NguyenLieu\UCNL.Designer.cs">
+      <DependentUpon>UCNL.cs</DependentUpon>
+    </Compile>
+    <Compile Include="App\Manager\NhanVien\AddNV.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="App\Manager\NhanVien\AddNV.Designer.cs">
+      <DependentUpon>AddNV.cs</DependentUpon>
+    </Compile>
+    <Compile Include="App\Manager\Luong\CardLuong.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="App\Manager\Luong\CardLuong.Designer.cs">
+      <DependentUpon>CardLuong.cs</DependentUpon>
+    </Compile>
+    <Compile Include="App\Manager\Luong\LuongDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="App\Manager\Luong\LuongDetails.Designer.cs">
+      <DependentUpon>LuongDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="App\Manager\MainManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="App\Manager\MainManager.Designer.cs">
+      <DependentUpon>MainManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="App\Manager\Luong\UCLuong.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="App\Manager\Luong\UCLuong.Designer.cs">
+      <DependentUpon>UCLuong.cs</DependentUpon>
+    </Compile>
+    <Compile Include="App\Manager\NhanVien\UCNV.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="App\Manager\NhanVien\UCNV.Designer.cs">
+      <DependentUpon>UCNV.cs</DependentUpon>
+    </Compile>
+    <Compile Include="App\Manager\ThucDon\AddTDManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="App\Manager\ThucDon\AddTDManager.Designer.cs">
+      <DependentUpon>AddTDManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="App\Manager\ThucDon\CardTDManager.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="App\Manager\ThucDon\CardTDManager.Designer.cs">
+      <DependentUpon>CardTDManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="App\Manager\ThucDon\UCTDManager.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="App\Manager\ThucDon\UCTDManager.Designer.cs">
+      <DependentUpon>UCTDManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="App\Staff\CaiDat\UCCDStaff.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="App\Staff\CaiDat\UCCDStaff.Designer.cs">
+      <DependentUpon>UCCDStaff.cs</DependentUpon>
+    </Compile>
+    <Compile Include="App\Staff\GioHang\CardGH.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="App\Staff\GioHang\CardGH.Designer.cs">
+      <DependentUpon>CardGH.cs</DependentUpon>
+    </Compile>
+    <Compile Include="App\Staff\GioHang\UCGHStaff.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="App\Staff\GioHang\UCGHStaff.Designer.cs">
+      <DependentUpon>UCGHStaff.cs</DependentUpon>
+    </Compile>
+    <Compile Include="App\Staff\HoaDon\CardHD.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="App\Staff\HoaDon\CardHD.Designer.cs">
+      <DependentUpon>CardHD.cs</DependentUpon>
+    </Compile>
+    <Compile Include="App\Staff\HoaDon\HDDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="App\Staff\HoaDon\HDDetail.Designer.cs">
+      <DependentUpon>HDDetail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="App\Staff\HoaDon\UCHD.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="App\Staff\HoaDon\UCHD.Designer.cs">
+      <DependentUpon>UCHD.cs</DependentUpon>
+    </Compile>
+    <Compile Include="App\Staff\KhuyenMai\UCKMStaff.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="App\Staff\KhuyenMai\UCKMStaff.Designer.cs">
+      <DependentUpon>UCKMStaff.cs</DependentUpon>
+    </Compile>
+    <Compile Include="App\Staff\MainStaff.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="App\Staff\MainStaff.Designer.cs">
+      <DependentUpon>MainStaff.cs</DependentUpon>
+    </Compile>
+    <Compile Include="App\Staff\ThucDon\CardTDStaff.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="App\Staff\ThucDon\CardTDStaff.Designer.cs">
+      <DependentUpon>CardTDStaff.cs</DependentUpon>
+    </Compile>
+    <Compile Include="App\Staff\ThucDon\UCTDStaff.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="App\Staff\ThucDon\UCTDStaff.Designer.cs">
+      <DependentUpon>UCTDStaff.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BLL\AdminNotificationBLL.cs" />
+    <Compile Include="BLL\AdminRevenueBLL.cs" />
+    <Compile Include="BLL\AdminUserBLL.cs" />
+    <Compile Include="BLL\CartTableBLL.cs" />
+    <Compile Include="BLL\CookTableBLL.cs" />
+    <Compile Include="BLL\File.cs" />
+    <Compile Include="BLL\HistoryDataBLL.cs" />
+    <Compile Include="BLL\LoginBLL.cs" />
+    <Compile Include="BLL\NotificationTableBLL.cs" />
+    <Compile Include="BLL\PromotionTableBLL.cs" />
+    <Compile Include="BLL\ProvinceBLL.cs" />
+    <Compile Include="BLL\StoreAddressTableBLL.cs" />
+    <Compile Include="DAL\CartTableDAL.cs" />
+    <Compile Include="DAL\DatabaseAdapter.cs" />
+    <Compile Include="DAL\DatabaseSQLServer.cs" />
+    <Compile Include="DAL\HistoryDataDAL.cs" />
+    <Compile Include="DAL\IDatabaseAccess.cs" />
+    <Compile Include="DAL\IDatabaseSQLServer.cs" />
+    <Compile Include="DAL\NotificationDAL.cs" />
+    <Compile Include="DAL\CookTableDAL.cs" />
+    <Compile Include="DAL\DatabaseAccess.cs" />
+    <Compile Include="DAL\LoginDAL.cs" />
+    <Compile Include="DAL\PromotionTableDAL.cs" />
+    <Compile Include="DAL\ProvinceDAL.cs" />
+    <Compile Include="DAL\RevenueCRUD_DAL.cs" />
+    <Compile Include="DAL\StoreAddressTableDAL.cs" />
+    <Compile Include="DAL\UserCRUD_DAL.cs" />
+    <Compile Include="DTO\CartDataItem.cs" />
+    <Compile Include="DTO\HistoryUserData.cs" />
+    <Compile Include="DTO\MenuItem.cs" />
+    <Compile Include="DTO\Notification.cs" />
+    <Compile Include="DTO\PromotionItem.cs" />
+    <Compile Include="DTO\Province.cs" />
+    <Compile Include="DTO\Revenue.cs" />
+    <Compile Include="DTO\StoreAddressItem.cs" />
+    <Compile Include="DTO\User.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="App\Admin\KhuyenMai\AddKM.resx">
+      <DependentUpon>AddKM.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App\Admin\KhuyenMai\CardKMAdmin.resx">
+      <DependentUpon>CardKMAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App\Admin\KhuyenMai\CardKMAdmin.vi.resx">
+      <DependentUpon>CardKMAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App\Admin\MainAdmin.resx">
+      <DependentUpon>MainAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App\Admin\TaiKhoan\EditTK.resx">
+      <DependentUpon>EditTK.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App\Admin\ThongBao\CardTBAdmin.resx">
+      <DependentUpon>CardTBAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App\Admin\ThongBao\TBDetailAdmin.resx">
+      <DependentUpon>TBDetailAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App\Admin\ThongBao\UCTBAdmin.resx">
+      <DependentUpon>UCTBAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App\Admin\DoanhThu\UCDTAdmin.vi.resx">
+      <DependentUpon>UCDTAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App\Admin\KhuyenMai\UCKMAdmin.resx">
+      <DependentUpon>UCKMAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App\Admin\DoanhThu\UCDTAdmin.resx">
+      <DependentUpon>UCDTAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App\Admin\TaiKhoan\UCTK.resx">
+      <DependentUpon>UCTK.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App\Admin\TaiKhoan\UCTK.vi.resx">
+      <DependentUpon>UCTK.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App\Login\Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App\Login\UCDK.resx">
+      <DependentUpon>UCDK.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App\Main\CaiDat\CardDH.en.resx">
+      <DependentUpon>CardDH.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App\Main\CaiDat\CardDH.resx">
+      <DependentUpon>CardDH.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App\Main\CaiDat\CardOrderDetails.resx">
+      <DependentUpon>CardOrderDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App\Main\CaiDat\OrderDetails.resx">
+      <DependentUpon>OrderDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App\Main\CaiDat\UCCD.en.resx">
+      <DependentUpon>UCCD.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App\Main\CaiDat\UCCD.ha.resx">
+      <DependentUpon>UCCD.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App\Main\CaiDat\UCCD.resx">
+      <DependentUpon>UCCD.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App\Main\CaiDat\UCCD.vi.resx">
+      <DependentUpon>UCCD.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App\Main\CuaHang\CardCH.resx">
+      <DependentUpon>CardCH.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App\Main\GioHang\ADKM.resx">
+      <DependentUpon>ADKM.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App\Main\GioHang\CardGH.resx">
+      <DependentUpon>CardGH.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App\Main\GioHang\QRcode.resx">
+      <DependentUpon>QRcode.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App\Main\GioHang\UCGH.en.resx">
+      <DependentUpon>UCGH.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App\Main\GioHang\UCGH.resx">
+      <DependentUpon>UCGH.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App\Main\GioHang\UCGH.vi.resx">
+      <DependentUpon>UCGH.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App\Main\KhuyenMai\CardKM.resx">
+      <DependentUpon>CardKM.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App\Main\KhuyenMai\CardKMForDisplay.resx">
+      <DependentUpon>CardKMForDisplay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App\Main\KhuyenMai\UCKM.en.resx">
+      <DependentUpon>UCKM.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App\Main\KhuyenMai\UCKM.vi.resx">
+      <DependentUpon>UCKM.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App\Main\MainUser.en.resx">
+      <DependentUpon>MainUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App\Main\MainUser.vi.resx">
+      <DependentUpon>MainUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App\Main\ThongBao\CardTB.resx">
+      <DependentUpon>CardTB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App\Main\ThongBao\TBDetail.resx">
+      <DependentUpon>TBDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App\Main\ThucDon\CardTD.en.resx">
+      <DependentUpon>CardTD.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App\Main\ThucDon\CardTD.resx">
+      <DependentUpon>CardTD.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App\Main\CuaHang\UCCH.resx">
+      <DependentUpon>UCCH.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App\Login\UCDN.resx">
+      <DependentUpon>UCDN.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App\Main\KhuyenMai\UCKM.resx">
+      <DependentUpon>UCKM.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App\Main\ThucDon\CardTD.vi.resx">
+      <DependentUpon>CardTD.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App\Main\ThucDon\UCTD.en.resx">
+      <DependentUpon>UCTD.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App\Main\ThucDon\UCTD.vi.resx">
+      <DependentUpon>UCTD.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App\Main\UCMain.en.resx">
+      <DependentUpon>UCMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App\Main\UCMain.resx">
+      <DependentUpon>UCMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App\Main\ThucDon\UCTD.resx">
+      <DependentUpon>UCTD.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App\Main\MainUser.resx">
+      <DependentUpon>MainUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App\Main\ThongBao\UCTB.resx">
+      <DependentUpon>UCTB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App\Manager\DoanhThu\UCDTManager.resx">
+      <DependentUpon>UCDTManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App\Manager\NguyenLieu\UCNL.resx">
+      <DependentUpon>UCNL.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App\Manager\NhanVien\AddNV.resx">
+      <DependentUpon>AddNV.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App\Manager\Luong\CardLuong.resx">
+      <DependentUpon>CardLuong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App\Manager\Luong\LuongDetails.resx">
+      <DependentUpon>LuongDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App\Manager\MainManager.resx">
+      <DependentUpon>MainManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App\Manager\Luong\UCLuong.resx">
+      <DependentUpon>UCLuong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App\Manager\NhanVien\UCNV.resx">
+      <DependentUpon>UCNV.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App\Manager\ThucDon\AddTDManager.resx">
+      <DependentUpon>AddTDManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App\Manager\ThucDon\CardTDManager.resx">
+      <DependentUpon>CardTDManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App\Manager\ThucDon\UCTDManager.resx">
+      <DependentUpon>UCTDManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App\Staff\CaiDat\UCCDStaff.resx">
+      <DependentUpon>UCCDStaff.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App\Staff\GioHang\CardGH.resx">
+      <DependentUpon>CardGH.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App\Staff\GioHang\UCGHStaff.resx">
+      <DependentUpon>UCGHStaff.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App\Staff\HoaDon\CardHD.resx">
+      <DependentUpon>CardHD.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App\Staff\HoaDon\HDDetail.resx">
+      <DependentUpon>HDDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App\Staff\HoaDon\UCHD.resx">
+      <DependentUpon>UCHD.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App\Staff\KhuyenMai\UCKMStaff.resx">
+      <DependentUpon>UCKMStaff.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App\Staff\MainStaff.resx">
+      <DependentUpon>MainStaff.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App\Staff\ThucDon\CardTDStaff.resx">
+      <DependentUpon>CardTDStaff.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App\Staff\ThucDon\UCTDStaff.resx">
+      <DependentUpon>UCTDStaff.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\DataSources\FinalProject.DTO.MenuItem.datasource" />
+    <None Include="Properties\DataSources\FinalProject.DTO.PromotionItem.datasource" />
+    <None Include="Properties\DataSources\FinalProject.DTO.Revenue.datasource" />
+    <None Include="Properties\DataSources\FinalProject.DTO.StoreAddressItem.datasource" />
+    <None Include="Properties\DataSources\FinalProject.DTO.User.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Eye.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Blind.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arrow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\6522516 1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\avt.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageedit_9_8657382073-transformed.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\[removal.ai]_tmp-641434d157788.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageedit_2_8623276470-removebg-preview4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\image 1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\HinhKM1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo_momo.png" />
+    <None Include="Resources\moneylogo2.png" />
+    <None Include="Resources\moneylogo.png" />
+    <None Include="Resources\SignOut4.png" />
+    <None Include="Resources\Lich.png" />
+    <None Include="Resources\voucher.png" />
+    <None Include="Resources\logo-_-lotteria-800-x-515px-scaled_preview_rev_11.png" />
+    <None Include="Resources\KM.png" />
+    <None Include="Resources\searchh.png" />
+    <None Include="Resources\search.png" />
+    <None Include="Resources\search_preview_rev_11.png" />
+    <None Include="Resources\search_preview_rev_1.png" />
+    <None Include="Resources\imageedit_15_4692041741_preview_rev_1.png" />
+    <None Include="Resources\imageedit_4_3352732708.png" />
+    <None Include="Resources\imageedit_4_3352732708-removebg-preview.png" />
+    <None Include="Resources\imageedit_4_2594588756.png" />
+    <None Include="Resources\imageedit_2_9412216040-removebg-preview1.png" />
+    <None Include="Resources\imageedit_2_9412216040-removebg-preview.png" />
+    <None Include="Resources\imageedit_2_5889740345.png" />
+    <None Include="Resources\MoMo_Logo2.png" />
+    <None Include="Resources\MoMo_Logo1.png" />
+    <None Include="Resources\Language.png" />
+    <None Include="Resources\TT.png" />
+    <None Include="Resources\imageedit_8_3852496439-removebg-preview1.png" />
+    <None Include="Resources\imageedit_8_3852496439-removebg-preview.png" />
+    <None Include="Resources\imageedit_6_6776574693-removebg-preview.png" />
+    <None Include="Resources\imageedit_6_6776574693.png" />
+    <None Include="Resources\imageedit_4_9781102328-removebg-preview.png" />
+    <None Include="Resources\imageedit_4_9781102328.png" />
+    <None Include="Resources\setting.png" />
+    <None Include="Resources\ImageSlider4.jpg" />
+    <None Include="Resources\ImageSlider5.jpg" />
+    <None Include="Resources\ImageSlider3.jpg" />
+    <None Include="Resources\ImageSlider2.jpg" />
+    <None Include="Resources\LastSlider.png" />
+    <None Include="Resources\NextSlider.png" />
+    <None Include="Resources\ImageSlider.png" />
+    <None Include="Resources\Background.png" />
+    <None Include="Resources\Eye1.png" />
+    <None Include="Resources\Eye2.png" />
+    <None Include="Resources\account.png" />
+    <None Include="Resources\DH.png" />
+    <None Include="Resources\BM.png" />
+    <None Include="Resources\Edit.png" />
+    <None Include="Resources\account1.png" />
+    <None Include="Resources\account %282%29.png" />
+    <None Include="Resources\accountt.png" />
+    <None Include="Resources\acountt.png" />
+    <None Include="Resources\account__2_-removebg-preview.png" />
+    <None Include="Resources\doanhthu.png" />
+    <None Include="Resources\doanhthu1.png" />
+    <None Include="Resources\doanhthu2.png" />
+    <None Include="Resources\account__2_-removebg-preview_preview_rev_1.png" />
+    <None Include="Resources\acc.png" />
+    <Content Include="Resources\Group 56.png" />
+    <Content Include="Resources\Icon_close_form.png" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
